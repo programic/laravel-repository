@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Repositories;
+
+use Programic\Repository\Repository;
+
+class REPOSITORY_NAME extends Repository
+{
+
+}
