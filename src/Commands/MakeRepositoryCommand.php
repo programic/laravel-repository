@@ -31,13 +31,16 @@ class MakeRepositoryCommand extends Command
      */
     public function handle()
     {
-        $className = Str::studly($this->argument('task'));
+        $className = Str::studly($this->argument('repository'));
         $fileName = $className . '.php';
 
         $stub = File::get(__DIR__ . '/../../stubs/repository.php.stub');
         $stub = str_replace('REPOSITORY_NAME', $className, $stub);
 
-        File::put(base_path() . '/app/Repositories/' . $fileName, $stub);
+        $path = base_path() . '/app/Repositories';
+
+        File::isDirectory($path) or File::makeDirectory($path);
+        File::put($path . '/' . $fileName, $stub);
 
         $this->line('<info>Repository created:</info> ' . $fileName);
     }

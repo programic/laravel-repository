@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use Programic\Repository\Repository;
+use Programic\Repository\BaseRepository;
 
-class REPOSITORY_NAME extends Repository
+class REPOSITORY_NAME extends BaseRepository
 {
 
 }
